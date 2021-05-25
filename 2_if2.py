@@ -15,12 +15,33 @@
 
 """
 
+def compare_str(str1,str2):
+    if type(str1) == str and type(str2) == str:
+      if str1 == str2:
+        return "1 - Строки одинаковые"
+      else:
+        result = ""
+        if len(str1) > len(str2):
+          result += "2 - Строки разные, первая длиннее\n"
+        if len(str1) == len(str2):
+          result += "2* - Строки разные, но одной длины\n"
+        if len(str1) < len(str2):
+          result += "2** - Строки разные, первая короче\n"
+        if str2 == "learn":
+          result += "3 - Cтроки разные и вторая строка 'learn'"
+        return result
+    else:
+      return "0 - Строки - не строки"
+
 def main():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
-    
+
+    print("Автопроветка: ")
+    print(compare_str(111111, "learn"))       # не строки
+    print(compare_str("abcdefg", "1234567"))  # разные одной длины
+    print(compare_str("abc", 1234567))        # не строки
+
+    print("Введите две строки: ")
+    print(compare_str(input(), input()))
+
 if __name__ == "__main__":
     main()

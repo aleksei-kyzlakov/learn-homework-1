@@ -13,13 +13,26 @@
 * Вывести содержимое переменной на экран
 
 """
+def assess(age):
+    if 0 <= age <= 6:
+      return "в детский сад"
+    elif 7 <= age <= 16:
+      return "в школу"
+    elif 17 <= age <= 21:
+      return "в ВУЗ"
+    elif 22 <= age <= 65:
+      return "работать"
+    elif age > 66:
+      return "на пенсию"
+
 
 def main():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
+    age = input("Введите ваш возраст: ")
+    if age.isdigit():
+      print("Вам пора " + assess(int(age)))
+    else:
+      print("Ошибка ввода")
+   
 
 if __name__ == "__main__":
     main()
